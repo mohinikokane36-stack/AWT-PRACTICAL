@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Course Eligibility</title>
+
+<style>
+body{
+    background-color: #eaf4fc;
+    color: #222;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h2{
+    color: darkblue;
+}
+
+label{
+    color: darkgreen;
+    font-weight: bold;
+}
+
+input{
+    margin: 5px;
+    padding: 5px;
+}
+
+#x{
+    color: blue;
+    font-weight: bold;
+}
+
+#y{
+    color: brown;
+}
+</style>
+
+</head>
+
+<body>
+
+<h2>Course Eligibility</h2>
+
+<form>
+
+<label>Name :</label><br>
+<input type="text" id="n"><br><br>
+
+<label>Roll No :</label><br>
+<input type="text" id="r"><br><br>
+
+<label>Attendance :</label><br>
+<input type="number" id="a"><br><br>
+
+<label>Skill Marks :</label><br>
+<input type="number" id="m"><br><br>
+
+<input type="button" value="Submit" onclick="f()">
+
+</form>
+
+<p id="x"></p>
+<p id="y"></p>
+
+<script>
+
+function f(){
+
+if(n.value=="" || r.value=="" || a.value=="" || m.value==""){
+alert("Fill all fields");
+return;
+}
+
+if(!/^[0-9]+$/.test(r.value)){
+alert("Invalid Roll Number");
+return;
+}
+
+if(a.value>=75 && m.value>=50)
+x.innerHTML="Eligible";
+else if(a.value>=60)
+x.innerHTML="Improvement Required";
+else
+x.innerHTML="Not Eligible";
+
+let t=["HTML","CSS","JavaScript"];
+
+y.innerHTML="Technologies:<br>";
+
+t.forEach(function(i){
+y.innerHTML+=i+"<br>";
+});
+
+}
+
+</script>
+
+</body>
+</html>
